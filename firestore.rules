@@ -34,6 +34,12 @@ service cloud.firestore {
       allow read, write: if isSignedIn() && request.auth.uid == uid;
     }
 
+    // Guide content overrides: anyone may read; only admins may edit.
+    match /guides/{slug} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
     // Audit log of admin actions (admin-only).
     match /adminLogs/{logId} {
       allow read, create: if isAdmin();

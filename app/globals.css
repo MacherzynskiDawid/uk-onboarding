@@ -257,3 +257,29 @@ header.site .nav-logout:hover { background: rgba(255,255,255,0.14); filter: none
 /* finished guides on the profile: soft pastel-green row, title keeps its colour */
 .dash-list li.done { background: #d6efe0; border-color: #b6dcc6; }
 .dash-list li.done .tick { color: var(--success); }
+
+/* ===== Admin guide editor ===== */
+.guide-editor { margin-top: 2rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+.ge-list { list-style: none; padding: 0; margin: 0.6rem 0; }
+.ge-list li { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.6rem 0.9rem; margin: 0.4rem 0; }
+.ge-list button { background: var(--brand); color: #fff; border: none; border-radius: 999px; padding: 0.35rem 0.95rem; cursor: pointer; }
+.ge-form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+.ge-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem; }
+.ge-badge { background: #d6efe0; color: #166534; font-size: 0.72rem; padding: 0.12rem 0.5rem; border-radius: 999px; }
+.ge-back { margin-left: auto; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.85rem; cursor: pointer; }
+.ge-field { display: flex; flex-direction: column; gap: 0.25rem; margin: 0.5rem 0; }
+.ge-field > span { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+.ge-field input, .ge-field textarea { font: inherit; padding: 0.5rem 0.6rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; width: 100%; box-sizing: border-box; }
+.ge-field textarea { resize: vertical; }
+.ge-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.ge-row .ge-field { flex: 1; min-width: 200px; }
+.ge-date { max-width: 220px; }
+.ge-steps-head { font-size: 0.95rem; margin: 1rem 0 0.3rem; }
+.ge-step { display: flex; gap: 0.6rem; padding: 0.7rem 0; border-top: 1px dashed var(--line); }
+.ge-step-n { flex: 0 0 1.6rem; height: 1.6rem; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+.ge-step-fields { flex: 1; }
+.ge-actions { display: flex; align-items: center; gap: 0.7rem; margin-top: 1rem; flex-wrap: wrap; }
+.ge-save { background: var(--brand); color: #fff; border: none; border-radius: 999px; padding: 0.5rem 1.3rem; cursor: pointer; font-weight: 600; }
+.ge-save:disabled { opacity: 0.6; }
+.ge-reset { background: none; color: #b42318; border: 1px solid #f3c0bb; border-radius: 999px; padding: 0.5rem 1.1rem; cursor: pointer; }
+.ge-status { font-size: 0.85rem; color: #166534; }

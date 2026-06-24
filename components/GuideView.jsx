@@ -6,6 +6,7 @@ import { useAuth } from "./AuthProvider";
 import { useProgress } from "@/app/hooks/useProgress";
 import { isFirebaseConfigured } from "@/app/firebase/setup";
 import { pathKey } from "@/data/guides";
+import { fetchGuideOverride, mergeOverride } from "@/lib/guide-overrides";
 import { ui } from "@/lib/ui-strings";
 import Trophy from "./Trophy";
 
@@ -56,7 +57,17 @@ function StepList({ steps, slug, lang, isStepDone, toggleStep }) {
   );
 }
 
-export default function GuideView({ guide, prereqGuides }) {
+export default function GuideView({ guide: initialGuide, prereqGuides }) {
+  const [guide, setGuide] = useState(initialGuide);
+  useEffect(() => {
+    let alive = true;
+    setGuide(initialGuide);
+    fetchGuideOverride(initialGuide.slug).then((ov) => {
+      if (alive && ov) setGuide(mergeOverride(initialGuide, ov));
+    });
+    return () => { alive = false; };
+  }, [initialGuide]);
+
   const { lang } = useLanguage();
   const { user, loading } = useAuth();
   const { progress, isStepDone, toggleStep } = useProgress();

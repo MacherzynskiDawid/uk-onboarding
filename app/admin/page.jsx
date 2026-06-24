@@ -5,6 +5,7 @@ import { db } from "@/app/firebase/setup";
 import { useAuth } from "@/components/AuthProvider";
 import { useLanguage } from "@/components/LanguageProvider";
 import { ui } from "@/lib/ui-strings";
+import GuideEditor from "@/components/GuideEditor";
 
 export default function Admin() {
   const { user, loading, role } = useAuth();
@@ -93,6 +94,7 @@ export default function Admin() {
           </li>
         ))}
       </ul>
+      <GuideEditor />
     </main>
   );
 }
