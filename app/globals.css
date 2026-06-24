@@ -283,3 +283,5 @@ header.site .nav-logout:hover { background: rgba(255,255,255,0.14); filter: none
 .ge-save:disabled { opacity: 0.6; }
 .ge-reset { background: none; color: #b42318; border: 1px solid #f3c0bb; border-radius: 999px; padding: 0.5rem 1.1rem; cursor: pointer; }
 .ge-status { font-size: 0.85rem; color: #166534; }
+.ge-cancel { background: none; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0.5rem 1.1rem; cursor: pointer; }
+.ge-cancel:hover { background: #f2f4f8; }

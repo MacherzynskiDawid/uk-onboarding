@@ -158,6 +158,7 @@ export default function GuideEditor() {
 
           <div className="ge-actions">
             <button type="button" className="ge-save" disabled={busy} onClick={save}>{ui.geSave[lang]}</button>
+            <button type="button" className="ge-cancel" disabled={busy} onClick={close}>{ui.geCancel[lang]}</button>
             {hasOverride && <button type="button" className="ge-reset" disabled={busy} onClick={reset}>{ui.geResetDefault[lang]}</button>}
             {status && <span className="ge-status">{status}</span>}
           </div>
