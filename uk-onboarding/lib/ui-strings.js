@@ -1,0 +1,106 @@
+// All interface text lives here so every Polish string is reviewed in one place.
+export const ui = {
+  essential:        { en: "essential",          pl: "kluczowe" },
+  extra:            { en: "extra",               pl: "dodatkowe" },
+  recommendedFirst: { en: "Recommended first",   pl: "Polecane na start" },
+  source:           { en: "Source",             pl: "Źródło" },
+  checked:          { en: "checked",            pl: "sprawdzone" },
+  beforeArrival:    { en: "Before you arrive",   pl: "Przed przyjazdem" },
+  afterArrival:     { en: "After you arrive",    pl: "Po przyjeździe" },
+  allGuides:        { en: "All guides",          pl: "Wszystkie przewodniki" },
+  intro:            { en: "Step-by-step guides for setting up life in the UK. Choose a task to begin.", pl: "Przewodniki krok po kroku, które pomogą Ci urządzić się w Wielkiej Brytanii. Wybierz zadanie, aby rozpocząć." },
+
+  // Home / hero
+  heroEyebrow:      { en: "Your UK checklist",    pl: "Twoja lista zadań w Wielkiej Brytanii" },
+  heroTitle:        { en: "Settle into life in the UK, one step at a time", pl: "Zorganizuj swoje życie w Wielkiej Brytanii krok po kroku" },
+  heroSubtitle:     { en: "Three essentials to sort first, plus a few helpful extras. Tick each step off as you go.", pl: "Trzy najważniejsze sprawy do załatwienia na start oraz kilka przydatnych dodatków. Odznaczaj kolejne kroki na bieżąco." },
+  essentialsLabel:  { en: "The 3 essentials",     pl: "3 kluczowe sprawy" },
+  extrasLabel:      { en: "Helpful extras",       pl: "Przydatne dodatki" },
+  progressDone:     { en: "done",                pl: "zrobione" },
+  completeWord:     { en: "complete",             pl: "ukończono" },
+  visaCallout:      { en: "Arriving from abroad? Check you have the right visa before you travel \u2192", pl: "Przyjeżdżasz z zagranicy? Przed podróżą upewnij się, że masz odpowiednią wizę \u2192" },
+  loginToSave:      { en: "to save your progress to your account.", pl: "aby zapisać postępy na swoim koncie." },
+
+  // Short ring labels
+  shortHome:        { en: "Home",                pl: "Mieszkanie" },
+  shortBank:        { en: "Bank",                pl: "Bank" },
+  shortNI:          { en: "NI number",            pl: "Numer NI" },
+
+  // Navigation & account
+  dashboard:        { en: "My progress",          pl: "Moje postępy" },
+  profile:          { en: "Profile",             pl: "Profil" },
+  account:          { en: "Account",             pl: "Konto" },
+  logIn:            { en: "Log in",              pl: "Zaloguj się" },
+  logOut:           { en: "Log out",             pl: "Wyloguj się" },
+
+  // Progress page
+  essentialsComplete: { en: "essential tasks complete", pl: "kluczowe sprawy ukończone" },
+  whatsNext:        { en: "What to do next",      pl: "Co zrobić dalej" },
+  journeyComplete:  { en: "You have completed all the essentials. Well done!", pl: "Wszystkie kluczowe sprawy ukończone. Dobra robota!" },
+  guestNote:        { en: "Your progress is saved on this device only.", pl: "Twoje postępy są zapisane tylko na tym urządzeniu." },
+  yourTasks:        { en: "Your tasks",           pl: "Twoje zadania" },
+  stepsWord:        { en: "steps",               pl: "kroki" },
+
+  // Messages
+  messages:         { en: "Messages",            pl: "Wiadomości" },
+  noMessages:       { en: "No messages yet. We'll let you know when there's something for you.", pl: "Brak nowych wiadomości. Powiadomimy Cię, gdy pojawi się coś dla Ciebie." },
+
+  // Auth
+  email:            { en: "Email",              pl: "Email" },
+  password:         { en: "Password",            pl: "Hasło" },
+  signIn:           { en: "Sign in",            pl: "Zaloguj się" },
+  signUp:           { en: "Create account",      pl: "Utwórz konto" },
+  createAccount:    { en: "Create an account",   pl: "Utwórz konto" },
+  needAccount:      { en: "Need an account?",    pl: "Potrzebujesz konta?" },
+  haveAccount:      { en: "Already have an account?", pl: "Masz już konto?" },
+  authError:        { en: "Something went wrong. Please check your details and try again.", pl: "Coś poszło nie tak. Sprawdź swoje dane i spróbuj ponownie." },
+
+  // Footer
+  footerDisclaimer: { en: "This app provides general information only and is not official, legal or immigration advice. Always check the official source links.", pl: "Ta aplikacja zawiera wyłącznie ogólne informacje i nie stanowi oficjalnej, prawnej ani imigracyjnej porady. Zawsze sprawdzaj linki do oficjalnych źródeł." },
+  footerSources:    { en: "Information based on official UK government, NHS and MoneyHelper sources.", pl: "Informacje oparte na oficjalnych źródłach rządu Wielkiej Brytanii, NHS i MoneyHelper." },
+
+  // Access gate
+  gateTitle:        { en: "Log in to open this guide", pl: "Zaloguj się, aby otworzyć ten przewodnik" },
+  gatePrompt:       { en: "Create a free account or log in to open the full step-by-step guide and save your progress.", pl: "Utwórz darmowe konto lub zaloguj się, aby otworzyć pełny przewodnik krok po kroku i zapisać swoje postępy." },
+  guestSignpost:    { en: "These are the essentials you'll need to settle in. Log in to open each guide and tick off your progress.", pl: "To są kluczowe sprawy, które musisz załatwić, aby się zadomowić. Zaloguj się, aby otworzyć poszczególne przewodniki i odznaczać postępy." },
+  progressGate:     { en: "Log in to track your progress and see where you are.", pl: "Zaloguj się, aby śledzić swoje postępy i sprawdzać status zadań." },
+  // Admin & auth tabs
+  admin:            { en: "Admin", pl: "Admin" },
+  adminTitle:       { en: "Admin", pl: "Panel administratora" },
+  adminIntro:       { en: "Manage user accounts. Role changes and deactivations are recorded; a deactivation needs a written reason.", pl: "Zarządzaj kontami użytkowników. Zmiany ról i dezaktywacje są rejestrowane; dezaktywacja wymaga podania uzasadnienia." },
+  adminNoAccess:    { en: "You do not have permission to view this page.", pl: "Nie masz uprawnień do przeglądania tej strony." },
+  makeAdmin:        { en: "Make admin", pl: "Ustaw jako admina" },
+  makeUser:         { en: "Make user", pl: "Ustaw jako użytkownika" },
+  deactivate:       { en: "Deactivate", pl: "Dezaktywuj" },
+  reactivate:       { en: "Reactivate", pl: "Aktywuj ponownie" },
+  sendMessage:      { en: "Send message", pl: "Wyślij wiadomość" },
+  deactivateReasonPrompt: { en: "Enter the reason for deactivating this account (required):", pl: "Wprowadź powód dezaktywacji tego konta (wymagane):" },
+  msgTitlePrompt:   { en: "Message title:", pl: "Tytuł wiadomości:" },
+  msgBodyPrompt:    { en: "Message:", pl: "Treść wiadomości:" },
+  deactivatedWord:  { en: "deactivated", pl: "dezaktywowane" },
+  reasonWord:       { en: "Reason", pl: "Powód" },
+  // Preview / setup state
+  previewMode:        { en: "Preview mode: accounts and cloud sync are off until Firebase is set up.", pl: "Tryb podglądu: konta i synchronizacja w chmurze są wyłączone do momentu skonfigurowania Firebase." },
+  accountsUnavailable:{ en: "Sign-in becomes available once Firebase is configured. For now, the guides work in preview mode and your progress is saved on this device.", pl: "Logowanie będzie dostępne po skonfigurowaniu Firebase. Na razie przewodniki działają w trybie podglądu, a Twoje postępy są zapisywane na tym urządzeniu." },
+  // Password reveal
+  showWord:           { en: "Show", pl: "Pokaż" },
+  hideWord:           { en: "Hide", pl: "Ukryj" },
+  showPassword:       { en: "Show password", pl: "Pokaż hasło" },
+  hidePassword:       { en: "Hide password", pl: "Ukryj hasło" },
+  // Sequential steps + trophies
+  completePrevious:   { en: "Complete the previous step first", pl: "Najpierw ukończ poprzedni krok" },
+  guideComplete:      { en: "Task complete - well done!", pl: "Zadanie zakończone - dobra robota!" },
+  allEssentialsTrophy:{ en: "All three essentials complete - well done!", pl: "Wszystkie trzy kluczowe zadania ukończone - dobra robota!" },
+  // Badges
+  badges:             { en: "Badges achieved", pl: "Zdobyte odznaki" },
+  noBadges:           { en: "Complete a guide to earn your first badge.", pl: "Ukończ przewodnik, aby zdobyć swoją pierwszą odznakę." },
+  // Path chooser
+  choosePathPrompt:   { en: "Which describes you?", pl: "Który opis pasuje do Ciebie?" },
+  choosePathStart:    { en: "Start this path", pl: "Rozpocznij tę ścieżkę" },
+  choosePathBack:     { en: "Choose a different path", pl: "Wybierz inną ścieżkę" },
+  // Welcome message (created at sign-up)
+  welcomeTitle:       { en: "Welcome to UK Newcomer Guides", pl: "Witaj w przewodnikach dla nowoprzybyłych do Wielkiej Brytanii" },
+  welcomeBody:        { en: "Great to have you here. Start with finding your accommodation and a UK address - most other tasks need it first. Tick each step off as you go, and your progress is saved to your account.", pl: "Cieszymy się, że jesteś z nami. Zacznij od znalezienia zakwaterowania i brytyjskiego adresu - jest on niezbędny do większości pozostałych zadań. Odznaczaj kolejne kroki na bieżąco, a Twoje postępy zostaną zapisane na koncie." },
+  // Journey
+  journeyLabel:       { en: "Then, step by step", pl: "Następnie, krok po kroku" },
+};
