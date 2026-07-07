@@ -16,6 +16,7 @@ export default function Nav() {
         <Link href="/" className="brand">UK&nbsp;Newcomer&nbsp;Guides</Link>
         <nav className="navright">
           <Link href="/map" className="nav-link">{ui.navMap[lang]}</Link>
+          <Link href="/faq" className="nav-link">{ui.navFaq[lang]}</Link>
           {role === "admin" && <Link href="/admin" className="nav-link">{ui.admin[lang]}</Link>}
           {user ? (
             <>
