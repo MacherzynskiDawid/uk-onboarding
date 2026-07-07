@@ -37,11 +37,6 @@ export default function FaqPage() {
         )}
       </p>
 
-      {/* Local language toggle — remove once wired to your global toggle */}
-      <button className="faq-lang" onClick={() => setLang(lang === "en" ? "pl" : "en")}>
-        {lang === "en" ? "Polski" : "English"}
-      </button>
-
       <input
         className="faq-search"
         type="search"

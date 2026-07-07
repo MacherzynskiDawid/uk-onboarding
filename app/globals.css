@@ -371,3 +371,40 @@ header.site .brand { color: #ffffff; font-weight: 700; font-size: 1.4rem; text-d
 .faq-links{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap}
 .faq-link{color:#4338ca;font-weight:500}
 .faq-lang{background:none;border:1px solid #4338ca;color:#4338ca;border-radius:20px;padding:4px 12px;cursor:pointer}
+
+/*Quiz*/
+.quiz-wrap{max-width:760px;margin:0 auto;padding:1rem}
+.quiz-intro,.quiz-official{line-height:1.5}
+.quiz-picker{list-style:none;padding:0;display:grid;gap:10px;margin:16px 0}
+.quiz-start{width:100%;text-align:left;background:#fff;border:1px solid #e6e7ee;border-radius:10px;
+  padding:14px 16px;color:#1f2333;font-size:1rem;cursor:pointer}
+.quiz-start:hover{filter:none;background:#f5f5fb}
+.quiz-start span{color:#666;font-weight:400}
+.quiz-list{list-style:none;padding:0}
+.quiz-q{border-bottom:1px solid #eceef4;padding:18px 0}
+.quiz-q-text{font-weight:600;margin-bottom:10px}
+.quiz-options{list-style:none;padding:0;display:grid;gap:8px}
+.quiz-opt{width:100%;display:flex;gap:10px;align-items:center;text-align:left;background:#fff;
+  border:1px solid #e6e7ee;border-radius:10px;padding:12px 14px;color:#1f2333;cursor:pointer}
+.quiz-opt:hover{filter:none;background:#f7f7fc}
+.quiz-opt.chosen{border-color:#4338ca;background:#4338ca;color:#ffffff}
+.quiz-opt.chosen .quiz-letter{color:#ffffff}
+.quiz-opt.correct{border-color:#18a957;background:#eaf7ef}
+.quiz-opt.wrong{border-color:#d10a0a;background:#fdeaea}
+.quiz-letter{font-weight:700;color:#4338ca;min-width:1.2em}
+.quiz-explain{margin-top:8px;font-size:.92rem;line-height:1.5;color:#333}
+.quiz-result{background:#f5f5fb;border-radius:10px;padding:12px 14px;margin:12px 0}
+.quiz-back{background:none;border:none;color:#4338ca;padding:0;cursor:pointer;margin-bottom:8px}
+.quiz-actions{display:flex;gap:16px;align-items:center;margin-top:16px;flex-wrap:wrap}
+/* Updated Action Buttons & Links */
+.quiz-submit {  display: inline-block;  background: var(--brand, #4338ca);  color: #fff;  border: none;  border-radius: 10px;  padding: 12px 24px;  font-size: 1rem; font-weight: 600;  cursor: pointer;  transition: background 0.2s ease, opacity 0.2s ease;  margin-top: 16px;}
+.quiz-submit:disabled {  background: #cbd5e1;  color: #64748b;  cursor: not-allowed;}
+.quiz-submit:not(:disabled):hover {  background: #3730a3; /* Darker variant for hover state */}
+.quiz-link {  color: var(--brand, #4338ca);  text-decoration: underline;  font-weight: 500;  transition: opacity 0.2s;}
+.quiz-link:hover {opacity: 0.8;}
+/* Premium CTA Card Style for GuideView */
+.guide-cta-link-wrapper {text-decoration: none !important; /* Removes the ugly text underline */display: block;margin: 24px 0;}
+.guide-cta-card {background: #f5f5fb;   border: 2px dashed #4338ca;   border-radius: 12px;  padding: 20px;  text-align: center;  transition: all 0.2s ease-in-out;cursor: pointer;}
+.guide-cta-card:hover {  background: #eef0fb;   border-style: solid;  transform: translateY(-2px);  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.15);}
+.guide-cta-title {  display: block;  font-size: 1.15rem;  font-weight: 700;  color: #4338ca;  margin-bottom: 6px;}
+.guide-cta-sub {  display: block;  font-size: 0.9rem;  color: #4b5563;}

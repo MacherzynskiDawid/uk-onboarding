@@ -40,8 +40,8 @@ export default function AuthForm({ initialMode = "signin" }) {
           { merge: true }
         );
         await addDoc(collection(db, "users", cred.user.uid, "messages"), {
-          title: ui.welcomeTitle[lang],
-          body: ui.welcomeBody[lang],
+          title: `${ui.welcomeTitle.en} / ${ui.welcomeTitle.pl}`,
+          body: `${ui.welcomeBody.en}\n\n---\n\n${ui.welcomeBody.pl}`,
           from: "system",
           createdAt: serverTimestamp(),
         });

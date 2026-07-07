@@ -109,6 +109,20 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
     </p>
   );
 
+  // Dynamic Call-To-Action Element reused across views cleanly
+  const theoryTestCta = (
+    <Link href="/driving-test" className="guide-cta-link-wrapper">
+      <div className="guide-cta-card">
+        <span className="guide-cta-title">
+          {ui.drivingQuizCta[lang]}
+        </span>
+        <span className="guide-cta-sub">
+          {ui.drivingQuizSub[lang]}
+        </span>
+      </div>
+    </Link>
+  );
+
   if (loading) return <main lang={lang}>{header}</main>;
 
   if (needsLogin && !user) {
@@ -154,20 +168,27 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
     const pkey = pathKey(guide, chosen);
     const stepsDone = (() => { let n = 0; while (n < sec.steps.length && isStepDone(pkey, n)) n++; return n; })();
     const allDone = sec.steps.length > 0 && stepsDone === sec.steps.length;
+    
     return (
       <main lang={lang}>
         {header}
         <p className="disclaimer">{guide.disclaimer[lang]}</p>
         <button type="button" className="path-back" onClick={() => setChosen(null)}>&larr; {ui.choosePathBack[lang]}</button>
         <h2 className="section-head">{sec.title[lang]}</h2>
+        
         <StepList steps={sec.steps} slug={pkey} lang={lang} isStepDone={isStepDone} toggleStep={toggleStep} />
+        
         {allDone && <Trophy label={ui.guideComplete[lang]} sub={sec.title[lang]} />}
+
+        {/* --- DYNAMIC DRIVING TEST MOCK CTA (Route Path rendering) --- */}
+        {guide.slug === "driving-licence" && chosen === 1 && theoryTestCta}
+
         {sourceLine}
       </main>
     );
   }
 
-  // --- Normal guide (flat, sequential) ---
+  // --- Normal guide (flat, sequential fallback) ---
   const allSteps = sections[0].steps;
   let seqDone = 0;
   while (seqDone < allSteps.length && isStepDone(guide.slug, seqDone)) seqDone++;
@@ -179,6 +200,10 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
       <p className="disclaimer">{guide.disclaimer[lang]}</p>
       <StepList steps={allSteps} slug={guide.slug} lang={lang} isStepDone={isStepDone} toggleStep={toggleStep} />
       {allDone && <Trophy label={ui.guideComplete[lang]} sub={guide.title[lang]} />}
+      
+      {/* --- DYNAMIC DRIVING TEST MOCK CTA (Sequential Fallback rendering) --- */}
+      {guide.slug === "driving-licence" && theoryTestCta}
+      
       {sourceLine}
     </main>
   );
