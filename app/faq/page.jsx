@@ -6,9 +6,10 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { faqs, faqCategories } from "@/data/faqs";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function FaqPage() {
-  const [lang, setLang] = useState("en"); // ← swap for your global language state
+  const { lang } = useLanguage();
   const [query, setQuery] = useState("");
   const [openId, setOpenId] = useState(null);
 

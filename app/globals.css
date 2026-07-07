@@ -362,8 +362,10 @@ header.site .brand { color: #ffffff; font-weight: 700; font-size: 1.4rem; text-d
 .faq-list{list-style:none;padding:0;margin:0}
 .faq-item{border:1px solid #e6e7ee;border-radius:10px;margin-bottom:8px;overflow:hidden}
 .faq-q{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;
-  background:#fff;border:none;padding:14px 16px;font-size:1rem;text-align:left;cursor:pointer}
-.faq-item.open .faq-q{background:#f5f5fb;font-weight:600}
+  background:#fff;border:1px solid #e6e7ee;border-radius:10px;padding:14px 16px;
+  font-size:1rem;font-weight:500;text-align:left;color:#1f2333;cursor:pointer}
+.faq-q:hover{filter:none;background:#f5f5fb}
+.faq-item.open .faq-q{background:#f5f5fb;font-weight:600;color:#1f2333}
 .faq-icon{font-size:1.3rem;color:#4338ca;line-height:1}
 .faq-a{padding:0 16px 16px;font-size:.95rem;line-height:1.5}
 .faq-links{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap}
