@@ -29,6 +29,7 @@ export default function FaqPage() {
 
   return (
     <main className="faq-wrap">
+      <Link href="/" className="back-link">← {lang === "en" ? "Back to home" : "Powrót do strony głównej"}</Link>
       <h1 className="faq-title">{t("Frequently Asked Questions", "Najczęściej zadawane pytania")}</h1>
       <p className="faq-intro">
         {t(

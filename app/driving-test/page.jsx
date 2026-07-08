@@ -3,19 +3,22 @@
 // app/driving-test/page.jsx
 // Practice quiz for the driving-licence guide. Reads questions from
 // data/driving-tests.js. Practice only, not the real test.
+// A trophy is awarded and SAVED (like guide completion) on an 80% pass.
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { drivingTests } from "@/data/driving-tests";
 import { useLanguage } from "@/components/LanguageProvider";
-import { ui } from "@/lib/ui-strings";
-import Trophy from "@/components/Trophy"; // Imported your existing Trophy component
+import { useProgress } from "@/app/hooks/useProgress";
+import Trophy from "@/components/Trophy";
 
 const LETTERS = ["A", "B", "C", "D"];
 
 export default function DrivingTestPage() {
   const { lang } = useLanguage();
   const t = (en, pl) => (lang === "en" ? en : pl);
+
+  const { progress, toggleStep } = useProgress();
 
   const [testId, setTestId] = useState(null);   // which mock test is active
   const [answers, setAnswers] = useState({});   // { questionId: chosenIndex }
@@ -34,6 +37,9 @@ export default function DrivingTestPage() {
     );
   }, [test, answers]);
 
+  const passMark = test ? Math.ceil(test.questions.length * 0.8) : 8; // 80%
+  const passed = submitted && test && score >= passMark;
+
   function start(id) {
     setTestId(id);
     setAnswers({});
@@ -48,13 +54,21 @@ export default function DrivingTestPage() {
     setAnswers({});
     setSubmitted(false);
   }
+  function checkAnswers() {
+    setSubmitted(true);
+    // Save the badge (once) if they passed : same mechanism as guide steps.
+    const key = `driving-test-${test.id}`;
+    if (score >= passMark && !(progress[key] || []).includes(0)) {
+      toggleStep(key, 0);
+    }
+  }
 
   // ---- Test picker ----
   if (!test) {
     return (
       <main className="quiz-wrap">
         <p style={{ marginBottom: "16px" }}>
-          <Link href="/guides/driving-licence" className="quiz-back" style={{ display: 'inline-block', textDecoration: 'none' }}>
+          <Link href="/guides/driving-licence" className="quiz-back" style={{ display: "inline-block", textDecoration: "none" }}>
             &larr; {t("Back to guide", "Wróć do przewodnika")}
           </Link>
         </p>
@@ -67,13 +81,20 @@ export default function DrivingTestPage() {
           )}
         </p>
         <ul className="quiz-picker">
-          {drivingTests.map((x) => (
-            <li key={x.id}>
-              <button className="quiz-start" onClick={() => start(x.id)}>
-                {x.title[lang]} <span>({x.questions.length} {t("questions", "pytań")})</span>
-              </button>
-            </li>
-          ))}
+          {drivingTests.map((x) => {
+            const earned = (progress[`driving-test-${x.id}`] || []).includes(0);
+            return (
+              <li key={x.id}>
+                <button className="quiz-start" onClick={() => start(x.id)}>
+                  <span>
+                    {x.title[lang]}{" "}
+                    <span className="quiz-count">({x.questions.length} {t("questions", "pytań")})</span>
+                  </span>
+                  {earned && <span className="quiz-earned" aria-label={t("Passed", "Zaliczony")}>{"\u2713"}</span>}
+                </button>
+              </li>
+            );
+          })}
         </ul>
         <p className="quiz-official">
           {t("Book the official theory test at ", "Zarezerwuj oficjalny egzamin teoretyczny na ")}
@@ -88,7 +109,7 @@ export default function DrivingTestPage() {
 
   return (
     <main className="quiz-wrap">
-      <button className="quiz-back" onClick={reset}>← {t("All tests", "Wszystkie testy")}</button>
+      <button className="quiz-back" onClick={reset}>&larr; {t("All tests", "Wszystkie testy")}</button>
       <h1>{test.title[lang]}</h1>
 
       {submitted && (
@@ -97,12 +118,17 @@ export default function DrivingTestPage() {
             {t("You scored", "Twój wynik")} <strong>{score}/{test.questions.length}</strong>.{" "}
             {t("Review the answers below.", "Sprawdź odpowiedzi poniżej.")}
           </div>
-          
-          {/* Completion badge matching your core guide structures */}
-          <Trophy 
-            label={t("Practice Test Completed!", "Test próbny ukończony!")} 
-            sub={`${test.title[lang]} (${score}/${test.questions.length})`} 
-          />
+
+          {passed ? (
+            <Trophy
+              label={t("Test passed!", "Test zaliczony!")}
+              sub={`${test.title[lang]} (${score}/${test.questions.length})`}
+            />
+          ) : (
+            <p className="quiz-encourage">
+              {t("Almost there — review the answers below and try again.", "Już prawie — przejrzyj odpowiedzi poniżej i spróbuj ponownie.")}
+            </p>
+          )}
         </>
       )}
 
@@ -145,7 +171,7 @@ export default function DrivingTestPage() {
       {!submitted ? (
         <button
           className="quiz-submit"
-          onClick={() => setSubmitted(true)}
+          onClick={checkAnswers}
           disabled={!allAnswered}
         >
           {allAnswered

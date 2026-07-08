@@ -85,6 +85,20 @@ export default function HomeView({ essentials, extras, visa }) {
         </ol>
       </section>
 
+      <section className="help-links">
+        <p className="group-label">{ui.helpLabel[lang]}</p>
+        <div className="help-grid">
+          <Link href="/faq" className="help-card">
+            <span className="help-card-title">{ui.faqTitle[lang]}</span>
+            <span className="help-card-desc">{ui.faqDesc[lang]}</span>
+          </Link>
+          <Link href="/glossary" className="help-card">
+            <span className="help-card-title">{ui.glossaryTitle[lang]}</span>
+            <span className="help-card-desc">{ui.glossaryDesc[lang]}</span>
+          </Link>
+        </div>
+      </section>
+
       {!user && (
         <p className="muted login-hint">
           <Link href="/login">{ui.logIn[lang]}</Link> {ui.loginToSave[lang]}
