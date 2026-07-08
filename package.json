@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check:markers": "node scripts/validate-markers.mjs"
   },
   "dependencies": {
     "firebase": "^12",
