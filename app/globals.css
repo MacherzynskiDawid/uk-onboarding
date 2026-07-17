@@ -425,3 +425,14 @@ header.site .brand { color: #ffffff; font-weight: 700; font-size: 1.4rem; text-d
 .help-card-title::after {  content: " →" / "";   /* alt-text "" keeps screen readers quiet */color: var(--brand);}
 .help-card-desc {  color: var(--muted);  font-size: 0.86rem;  line-height: 1.35;}
 @media (max-width: 480px) {.help-grid { grid-template-columns: 1fr; }}
+
+/* ---- Account deletion (danger zone) ---- */
+.danger-zone { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.danger-zone h2 { font-size: 1.05rem; color: #b42318; }
+.btn-danger { background: #b42318; color: #fff; border: none; }
+.btn-danger:disabled { opacity: .55; }
+.btn-cancel { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.danger-warning { color: #b42318; font-size: .9rem; }
+.danger-error { color: #b42318; font-size: .85rem; }
+.danger-confirm label { display: block; margin: .6rem 0; }
+.danger-actions { display: flex; gap: .6rem; margin-top: .5rem; }

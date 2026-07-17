@@ -10,6 +10,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { useProgress } from "@/app/hooks/useProgress";
 import { ui } from "@/lib/ui-strings";
 import Trophy from "@/components/Trophy";
+import DeleteAccount from "@/components/DeleteAccount";
 
 export default function MyProgress() {
   const { user, loading } = useAuth();
@@ -120,6 +121,8 @@ export default function MyProgress() {
       {user
         ? <button type="button" onClick={() => signOut(auth)}>{ui.logOut[lang]}</button>
         : <p className="muted">{ui.previewMode[lang]}</p>}
+
+      <DeleteAccount />
     </main>
   );
 }

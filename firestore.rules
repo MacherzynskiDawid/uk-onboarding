@@ -18,14 +18,16 @@ service cloud.firestore {
       allow create: if isSignedIn() && request.auth.uid == uid
                     && request.resource.data.role == 'user'
                     && request.resource.data.active == true;
-      // Only admins can change roles or deactivate accounts.
-      allow update, delete: if isAdmin();
+      // Only admins can change roles; users may delete their own account (GDPR erasure).
+      allow update: if isAdmin();
+      allow delete: if isAdmin() || (isSignedIn() && request.auth.uid == uid);
 
       // Messages: the user reads their own; only an admin creates them.
       match /messages/{messageId} {
         allow read: if isSignedIn() && request.auth.uid == uid;
         // Created by an admin (to any user) or by the user's own session (welcome message at sign-up).
         allow create: if isAdmin() || (isSignedIn() && request.auth.uid == uid);
+        allow delete: if isAdmin() || (isSignedIn() && request.auth.uid == uid);
       }
     }
 
