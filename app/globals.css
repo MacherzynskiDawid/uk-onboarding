@@ -161,7 +161,6 @@ ul.admin-list li.inactive { background: #faf0f0; border-color: #f0d4d4; }
 .admin-user { display: flex; flex-direction: column; }
 .admin-meta { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .admin-reason { color: #9a3b1f; font-size: 0.82rem; margin-top: 0.15rem; }
-.admin-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
 /* preview/config banner */
 .config-banner { background: #fff4e0; color: #7a4b00; border-bottom: 1px solid #f0d9a8; text-align: center; font-size: 0.84rem; padding: 0.45rem 1rem; }
@@ -306,7 +305,7 @@ header.site .nav-logout:hover { background: rgba(255,255,255,0.14); filter: none
 .ge-back { margin-left: auto; }
 
 /* add (constructive) */
-.ge-add-step { color: var(--brand); border-color: var(--brand-tint); margin-top: 0.75rem; }
+.ge-add-step { color: var(--brand); border-color: var(--brand-tint); margin-top: 0; }
 
 /* danger */
 .ge-reset, .ge-step-controls .ge-step-remove { color: #b42318; border-color: #f3c0bb; }
@@ -332,12 +331,51 @@ header.site .nav-logout:hover { background: rgba(255,255,255,0.14); filter: none
 .navright { gap: 1rem; flex-wrap: wrap; }
 .navright .nav-link { white-space: nowrap; }
 
-/* wrapper around admin map buttons (e.g. seed/reset controls) */
-.admin-map-actions {
-  display: flex;
-  align-items: center;   /* aligns boxes, not baselines */
-  gap: 0.6rem;
+/* Container alignment for admin map action controls AND list item row actions */
+.admin-map-actions,
+.admin-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
   flex-wrap: wrap;
+}
+.admin-map-actions {
+  margin-bottom: 1rem;
+}
+
+/* Force every button/link inside action containers to match height & center text */
+.admin-map-actions > *,
+.admin-actions > *,
+.admin-map-actions button,
+.admin-map-actions a,
+.admin-actions button,
+.admin-actions a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 36px !important;
+  padding: 0 1.1rem !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  border-radius: 999px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
+}
+
+/* Consistent button styling inside admin map actions */
+.admin-map-actions button,
+.admin-map-actions .btn-action {
+  background: #ffffff;
+  border: 1px solid var(--brand-tint, #ddd8ff);
+  color: var(--brand, #4338ca);
+}
+
+.admin-map-actions button:hover,
+.admin-map-actions .btn-action:hover {
+  background: var(--brand-soft, #ece9ff);
+  filter: none;
 }
 
 .map-controls { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin-bottom: 0.7rem; }
