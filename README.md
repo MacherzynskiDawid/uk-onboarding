@@ -16,12 +16,12 @@ npm run build && npm start
 Open http://localhost:3000
 
 ## What's here
-- `data/guides/*.js` — each guide is a plain object (title, steps, source, prerequisites).
+- `data/guides/*.js` : each guide is a plain object (title, steps, source, prerequisites).
   Adding a guide = one new file + one line in `data/guides/index.js`.
-- `lib/ui-strings.js` — all interface text (English filled, Polish to write).
-- `components/*.jsx` — language provider/toggle, the index list, the guide view.
-- `app/*` — layout, home, offline page, the dynamic guide route, service-worker registration.
-- `public/sw.js` + `public/manifest.webmanifest` — the PWA offline + install setup.
+- `lib/ui-strings.js` : all interface text (English filled, Polish to write).
+- `components/*.jsx` : language provider/toggle, the index list, the guide view.
+- `app/*` : layout, home, offline page, the dynamic guide route, service-worker registration.
+- `public/sw.js` + `public/manifest.webmanifest` : the PWA offline + install setup.
 
 ## What you need to do
 1. Replace the English placeholder where marked and confirm each official source link.
