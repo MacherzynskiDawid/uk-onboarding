@@ -2,7 +2,7 @@
 
 A bilingual (Polish/English) Progressive Web App giving newcomers ordered,
 step-by-step guides for setting up life in the UK. Built with Next.js (App Router)
-in plain JavaScript/JSX — no TypeScript. This is a starter scaffold for the COM629
+in plain JavaScript/JSX, no TypeScript. This is a starter scaffold for the COM629
 dissertation artefact; extend it in your own code.
 
 ## Run it
@@ -29,8 +29,3 @@ Open http://localhost:3000
 3. Replace the placeholder icons in `public/icons/`.
 4. Then build out: per-step progress, Firebase accounts, a WCAG 2.2 pass, and styling.
 
-## Notes
-- Plain JavaScript: `jsconfig.json` keeps the `@/` import alias working. No TypeScript.
-- Pinned to Next 15 for reliability; upgrade with `npm i next@latest react@latest react-dom@latest`.
-- This scaffold was AI-assisted — record that in your AI declaration, and make the
-  feature work and content your own (you'll be examined on it in the viva).
