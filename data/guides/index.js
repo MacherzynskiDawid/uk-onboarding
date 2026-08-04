@@ -1,10 +1,10 @@
-import { beforeArrival } from "./before-arrival";
-import { accommodation } from "./accommodation";
-import { bankAccount } from "./bank-account";
-import { nationalInsurance } from "./national-insurance";
-import { nhsRegistration } from "./nhs-registration";
-import { drivingLicence } from "./driving-licence";
-import { citizenship } from "./citizenship";
+import { beforeArrival } from "./before-arrival.js";
+import { accommodation } from "./accommodation.js";
+import { bankAccount } from "./bank-account.js";
+import { nationalInsurance } from "./national-insurance.js";
+import { nhsRegistration } from "./nhs-registration.js";
+import { drivingLicence } from "./driving-licence.js";
+import { citizenship } from "./citizenship.js";
 
 const all = [
   beforeArrival,

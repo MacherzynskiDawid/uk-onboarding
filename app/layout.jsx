@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ServiceWorkerRegister from "./sw-register";
 import { isFirebaseConfigured } from "@/app/firebase/setup";
+import AssistantWidget from "@/components/AssistantWidget"; // 👈 Added import
 
 export const metadata = {
   title: "UK Newcomer Guides",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
             <div className="container">{children}</div>
             <Footer />
             <ServiceWorkerRegister />
+            <AssistantWidget /> {/* 👈 Added component */}
           </LanguageProvider>
         </AuthProvider>
       </body>
