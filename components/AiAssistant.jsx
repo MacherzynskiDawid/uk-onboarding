@@ -10,17 +10,17 @@ import { useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const T = {
-  title:       { en: "Ask the guides", pl: "[PL: Ask the guides]" },
+  title:       { en: "Ask the guides", pl: "Zapytaj przewodników" },
   intro: {
     en: "Ask a question about the settling-in tasks covered by these guides. The assistant answers only from the guide and FAQ content and points you to the official source. It gives general information, not individual advice.",
-    pl: "[PL: author this intro]",
+    pl: "Zadaj pytanie dotyczące formalności osiedleńczych opisanych w tych przewodnikach. Asystent odpowiada wyłącznie na podstawie treści przewodników oraz sekcji FAQ i odsyła do oficjalnych źródeł. Udziela informacji ogólnych, a nie indywidualnych porad.",
   },
-  placeholder: { en: "e.g. How do I register with a GP?", pl: "[PL: przyklad pytania]" },
-  ask:         { en: "Ask", pl: "[PL: Ask]" },
-  asking:      { en: "Asking…", pl: "[PL: Asking…]" },
-  sources:     { en: "Sources", pl: "[PL: Sources]" },
-  error:       { en: "Something went wrong. Please try again.", pl: "[PL: error message]" },
-  empty:       { en: "Type a question first.", pl: "[PL: type a question first]" },
+  placeholder: { en: "e.g. How do I register with a GP?", pl: "np. Jak zarejestrować się do lekarza GP?" },
+  ask:         { en: "Ask", pl: "Zapytaj" },
+  asking:      { en: "Asking…", pl: "Pytam…" },
+  sources:     { en: "Sources", pl: "Źródła" },
+  error:       { en: "Something went wrong. Please try again.", pl: "Coś poszło nie tak. Spróbuj ponownie." },
+  empty:       { en: "Type a question first.", pl: "Najpierw wpisz pytanie." },
 };
 
 export default function AiAssistant() {
