@@ -126,7 +126,7 @@ export default function DrivingTestPage() {
             />
           ) : (
             <p className="quiz-encourage">
-              {t("Almost there — review the answers below and try again.", "Już prawie — przejrzyj odpowiedzi poniżej i spróbuj ponownie.")}
+              {t("Almost there, review the answers below and try again.", "Już prawie — przejrzyj odpowiedzi poniżej i spróbuj ponownie.")}
             </p>
           )}
         </>
