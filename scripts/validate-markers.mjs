@@ -64,9 +64,9 @@ SEED_MARKERS.forEach((m, i) => {
     add(i, "FAIL", `category "${m.category}" is not one of ${CATEGORIES.join(" / ")}`);
   if (!m.name || !String(m.name).trim()) add(i, "FAIL", "name is empty");
 
-  // Coordinates — mirrors fetchMarkers(): non-numbers never render.
+  // Coordinates, such as mirrors fetchMarkers(): non-numbers never render.
   if (!isNum(m.lat) || !isNum(m.lng)) {
-    add(i, "FAIL", "lat/lng missing or not numeric — this marker will NOT render");
+    add(i, "FAIL", "lat/lng missing or not numeric, this marker will NOT render");
   } else {
     const inUK =
       m.lat >= UK.latMin && m.lat <= UK.latMax &&
@@ -75,14 +75,14 @@ SEED_MARKERS.forEach((m, i) => {
       m.lng >= UK.latMin && m.lng <= UK.latMax &&
       m.lat >= UK.lngMin && m.lat <= UK.lngMax;
     if (!inUK)
-      add(i, "FAIL", `coords (${m.lat}, ${m.lng}) are outside the UK${swapped ? " — looks like lat and lng are SWAPPED" : ""}`);
+      add(i, "FAIL", `coords (${m.lat}, ${m.lng}) are outside the UK${swapped ? " , looks like lat and lng are SWAPPED" : ""}`);
 
     const area = postcodeArea(m.address);
     if (inUK && area && POSTCODE_AREAS[area]) {
       const [clat, clng, radius] = POSTCODE_AREAS[area];
       const d = kmBetween(m.lat, m.lng, clat, clng);
       if (d > radius)
-        add(i, "WARN", `coords are ~${Math.round(d)} km from the ${area} postcode area — wrong pin pasted?`);
+        add(i, "WARN", `coords are ~${Math.round(d)} km from the ${area} postcode area, wrong pin pasted?`);
     } else if (inUK && area && !POSTCODE_AREAS[area]) {
       add(i, "WARN", `postcode area "${area}" not in the sanity-check table (coords not cross-checked)`);
     }
@@ -91,7 +91,7 @@ SEED_MARKERS.forEach((m, i) => {
   if (!m.address || !String(m.address).trim())
     add(i, "WARN", "address is empty (popup will show name only)");
   if (!m.address || !postcodeArea(m.address))
-    add(i, "WARN", "no UK postcode found in address — harder for users to verify");
+    add(i, "WARN", "no UK postcode found in address, harder for users to verify");
 
   if (!m.note?.en?.trim()) add(i, "WARN", "note.en is empty");
   if (!m.note?.pl?.trim())
@@ -122,7 +122,7 @@ SEED_MARKERS.forEach((m, i) => {
   for (let j = 0; j < i; j++) {
     const n = SEED_MARKERS[j];
     if (isNum(n.lat) && isNum(n.lng) && kmBetween(m.lat, m.lng, n.lat, n.lng) < 0.03)
-      add(i, "WARN", `coords within 30 m of "${n.name}" — duplicate pin?`);
+      add(i, "WARN", `coords within 30 m of "${n.name}" , duplicate pin?`);
   }
 });
 
@@ -139,6 +139,6 @@ SEED_MARKERS.forEach((m, i) => {
 });
 
 const ready = SEED_MARKERS.filter((m) => isNum(m.lat) && isNum(m.lng)).length;
-console.log(`\n${SEED_MARKERS.length} entries — ${fails} fail(s), ${warns} warning(s).`);
+console.log(`\n${SEED_MARKERS.length} entries , ${fails} fail(s), ${warns} warning(s).`);
 console.log(`${ready} would be pushed by the "Seed sample locations" button (numeric lat/lng only).`);
 process.exitCode = fails ? 1 : 0;

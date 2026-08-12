@@ -1,0 +1,177 @@
+[
+  {
+    "id": "faq:about-advice:en",
+    "lang": "en",
+    "question": "Does this app give official immigration or legal advice?",
+    "referenceAnswer": "No. This app provides general, informational guidance only, based on official public sources. It does not give regulated immigration advice. For immigration advice you must contact an adviser registered with the Immigration Advice Authority (IAA).",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:about-advice:pl",
+    "lang": "pl",
+    "question": "Czy ta aplikacja udziela oficjalnych porad imigracyjnych lub prawnych?",
+    "referenceAnswer": "Nie. Ta aplikacja zapewnia wyłącznie ogólne informacje o charakterze orientacyjnym, oparte na oficjalnych źródłach publicznych. Nie stanowi ona regulowanej porady imigracyjnej. Aby uzyskać poradę imigracyjną, należy skontaktować się z doradcą zarejestrowanym w Immigration Advice Authority (IAA).",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:about-what:en",
+    "lang": "en",
+    "question": "What can this app help me with?",
+    "referenceAnswer": "This app guides you through the essential first steps of settling in the UK in a logical, sensible order. It helps you manage tasks like finding accommodation, opening a bank account, applying for a National Insurance number, and registering with a GP—all available in both English and Polish.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:about-what:pl",
+    "lang": "pl",
+    "question": "W czym może mi pomóc ta aplikacja?",
+    "referenceAnswer": "Aplikacja prowadzi Cię przez najważniejsze pierwsze kroki związane z osiedleniem się w Wielkiej Brytanii w logicznej, rozsądnej kolejności. Pomaga w załatwieniu takich spraw jak zakwaterowanie, założenie konta bankowego, wniosek o numer National Insurance czy rejestracja u lekarza rodzinnego (GP) – a wszystko to w języku angielskim i polskim.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:nino-what:en",
+    "lang": "en",
+    "question": "What is a National Insurance number and do I need one?",
+    "referenceAnswer": "A National Insurance (NI) number is a unique personal reference used to ensure your tax and National Insurance contributions are recorded correctly. You need one to work legally in the UK, claim benefits, or apply for a student loan. For a complete breakdown of the application process, check out our guide.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:nino-what:pl",
+    "lang": "pl",
+    "question": "Co to jest numer National Insurance (NINo) i czy go potrzebuję?",
+    "referenceAnswer": "Numer National Insurance (NI) to unikalny numer identyfikacyjny, który gwarantuje, że Twoje podatki i składki na ubezpieczenie społeczne są prawidłowo rejestrowane. Jest on niezbędny, aby legalnie pracować w Wielkiej Brytanii, ubiegać się o zasiłki lub pożyczkę studencką. Szczegółowy opis procesu składania wniosku znajdziesz w naszym przewodniku.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:bank-proof:en",
+    "lang": "en",
+    "question": "Can I open a bank account without proof of address?",
+    "referenceAnswer": "Traditional high-street banks usually require a UK proof of address (like a utility bill or tenancy agreement) to open an account. Because this creates a 'chicken-and-egg' dilemma for newcomers, this app sequences tasks to help you secure housing first, or prompts you to explore digital-first banks that have alternative verification methods.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:bank-proof:pl",
+    "lang": "pl",
+    "question": "Czy mogę otworzyć konto bankowe bez potwierdzenia adresu?",
+    "referenceAnswer": "Tradycyjne banki zazwyczaj wymagają brytyjskiego potwierdzenia adresu (np. rachunku za media lub umowy najmu) do otwarcia konta. Ponieważ tworzy to sytuację bez wyjścia dla nowych osób, aplikacja porządkuje zadania tak, aby najpierw pomóc Ci w znalezieniu mieszkania, lub sugeruje sprawdzenie banków cyfrowych, które oferują alternatywne metody weryfikacji.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:nhs-register:en",
+    "lang": "en",
+    "question": "How do I register with a GP (doctor)?",
+    "referenceAnswer": "You can register with a local General Practitioner (GP) surgery by filling out a registration form online or in person. According to official NHS guidelines, you do not need proof of address, ID, or legal immigration status to register as a patient. See our guide for step-by-step instructions.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:nhs-register:pl",
+    "lang": "pl",
+    "question": "Jak zarejestrować się u lekarza rodzinnego (GP)?",
+    "referenceAnswer": "Możesz zarejestrować się w lokalnej przychodni lekarskiej (GP), wypełniając formularz rejestracyjny online lub osobiście. Zgodnie z oficjalnymi wytycznymi NHS, do rejestracji nie jest wymagane potwierdzenie adresu, dokument tożsamości ani status imigracyjny. Instrukcję krok po kroku znajdziesz w naszym przewodniku.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:using-language:en",
+    "lang": "en",
+    "question": "How do I switch between English and Polish?",
+    "referenceAnswer": "You can easily switch the language at any time by clicking the language toggle (EN/PL) located in the main navigation bar at the top of the screen.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:using-language:pl",
+    "lang": "pl",
+    "question": "Jak przełączyć język między angielskim a polskim?",
+    "referenceAnswer": "Możesz łatwo zmienić język w dowolnym momencie, klikając przełącznik języka (EN/PL) znajdujący się na głównym pasku nawigacyjnym u góry ekranu.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:using-offline:en",
+    "lang": "en",
+    "question": "Can I use the app offline?",
+    "referenceAnswer": "Yes! This app is built as a Progressive Web App (PWA). Once you have loaded it in your browser with an internet connection, you can save it to your home screen and access all core guides and checklists even when you are offline.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "faq:using-offline:pl",
+    "lang": "pl",
+    "question": "Czy mogę korzystać z aplikacji w trybie offline?",
+    "referenceAnswer": "Tak! Ta aplikacja została stworzona jako Progressive Web App (PWA). Po pierwszym uruchomieniu jej w przeglądarce z dostępem do internetu, możesz zapisać ją na ekranie głównym i korzystać ze wszystkich najważniejszych przewodników oraz list zadań nawet bez połączenia z siecią.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:nhs-register:en",
+    "lang": "en",
+    "question": "how do I sign up with a doctor in the UK?",
+    "referenceAnswer": "You can register with a local General Practitioner (GP) surgery by filling out a registration form online or in person. According to official NHS guidelines, you do not need proof of address, ID, or legal immigration status to register as a patient. See our guide for step-by-step instructions.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:nhs-register:pl",
+    "lang": "pl",
+    "question": "jak moge zapisac sie do przychodni lekarskiej?",
+    "referenceAnswer": "Możesz zarejestrować się w lokalnej przychodni lekarskiej (GP), wypełniając formularz rejestracyjny online lub osobiście. Zgodnie z oficjalnymi wytycznymi NHS, do rejestracji nie jest wymagane potwierdzenie adresu, dokument tożsamości ani status imigracyjny. Instrukcję krok po kroku znajdziesz w naszym przewodniku.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:nino-what:en",
+    "lang": "en",
+    "question": "what is a national insurance number and why do I need one?",
+    "referenceAnswer": "A National Insurance (NI) number is a unique personal reference used to ensure your tax and National Insurance contributions are recorded correctly. You need one to work legally in the UK, claim benefits, or apply for a student loan. For a complete breakdown of the application process, check out our guide.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:nino-what:pl",
+    "lang": "pl",
+    "question": "co to jest numer NI i czy musze go miec?",
+    "referenceAnswer": "Numer National Insurance (NI) to unikalny numer identyfikacyjny, który gwarantuje, że Twoje podatki i składki na ubezpieczenie społeczne są prawidłowo rejestrowane. Jest on niezbędny, aby legalnie pracować w Wielkiej Brytanii, ubiegać się o zasiłki lub pożyczkę studencką. Szczegółowy opis procesu składania wniosku znajdziesz w naszym przewodniku.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:bank-proof:en",
+    "lang": "en",
+    "question": "can I open a bank account without proof of address?",
+    "referenceAnswer": "Traditional high-street banks usually require a UK proof of address (like a utility bill or tenancy agreement) to open an account. Because this creates a 'chicken-and-egg' dilemma for newcomers, this app sequences tasks to help you secure housing first, or prompts you to explore digital-first banks that have alternative verification methods.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "para:bank-proof:pl",
+    "lang": "pl",
+    "question": "czy da rade otworzyc konto w banku bez potwierdzenia adresu?",
+    "referenceAnswer": "Tradycyjne banki zazwyczaj wymagają brytyjskiego potwierdzenia adresu (np. rachunku za media lub umowy najmu) do otwarcia konta. Ponieważ tworzy to sytuację bez wyjścia dla nowych osób, aplikacja porządkuje zadania tak, aby najpierw pomóc Ci w znalezieniu mieszkania, lub sugeruje sprawdzenie banków cyfrowych, które oferują alternatywne metody weryfikacji.",
+    "expectOffCorpus": false
+  },
+  {
+    "id": "off:en:0",
+    "lang": "en",
+    "question": "What are the best restaurants in Manchester tonight?",
+    "referenceAnswer": "",
+    "expectOffCorpus": true
+  },
+  {
+    "id": "off:en:1",
+    "lang": "en",
+    "question": "Who won the football match last night?",
+    "referenceAnswer": "",
+    "expectOffCorpus": true
+  },
+  {
+    "id": "off:en:2",
+    "lang": "en",
+    "question": "Can you write me a cover letter for a job?",
+    "referenceAnswer": "",
+    "expectOffCorpus": true
+  },
+  {
+    "id": "off:pl:3",
+    "lang": "pl",
+    "question": "Jaka jest dzisiaj pogoda w Londynie?",
+    "referenceAnswer": "",
+    "expectOffCorpus": true
+  },
+  {
+    "id": "off:pl:4",
+    "lang": "pl",
+    "question": "Polec mi dobry film na wieczor.",
+    "referenceAnswer": "",
+    "expectOffCorpus": true
+  }
+]

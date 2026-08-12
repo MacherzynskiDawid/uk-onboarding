@@ -1,0 +1,294 @@
+{
+  "provider": "real",
+  "fidelity": {
+    "n": 14,
+    "bleu": 0.587908554912306,
+    "rouge1": 0.752204295934512,
+    "rouge2": 0.7177729512642251,
+    "rougeL": 0.7371428756829582
+  },
+  "safety": {
+    "onCorpus": 20,
+    "offCorpus": 5,
+    "falseRefusals": 6,
+    "falseGroundings": 0,
+    "refusalAccuracy": 1
+  },
+  "rows": [
+    {
+      "id": "faq:about-advice:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.4723665527410147,
+      "rouge1": 0.7272727272727273,
+      "rouge2": 0.7169811320754718,
+      "rougeL": 0.7272727272727273
+    },
+    {
+      "id": "faq:about-advice:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.48954165955695317,
+      "rouge1": 0.7368421052631579,
+      "rouge2": 0.7272727272727273,
+      "rougeL": 0.7368421052631579
+    },
+    {
+      "id": "faq:about-what:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 1,
+      "rouge1": 1,
+      "rouge2": 1,
+      "rougeL": 1
+    },
+    {
+      "id": "faq:about-what:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 1,
+      "rouge1": 1,
+      "rouge2": 1,
+      "rougeL": 1
+    },
+    {
+      "id": "faq:nino-what:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.7351414805916845,
+      "rouge1": 0.8666666666666666,
+      "rouge2": 0.8636363636363636,
+      "rougeL": 0.8666666666666666
+    },
+    {
+      "id": "faq:nino-what:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.7840807682246866,
+      "rouge1": 0.891566265060241,
+      "rouge2": 0.888888888888889,
+      "rougeL": 0.891566265060241
+    },
+    {
+      "id": "faq:bank-proof:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.21958721005992202,
+      "rouge1": 0.5476190476190476,
+      "rouge2": 0.3902439024390244,
+      "rougeL": 0.5238095238095237
+    },
+    {
+      "id": "faq:bank-proof:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.04094627093863106,
+      "rouge1": 0.22950819672131148,
+      "rouge2": 0.20338983050847456,
+      "rougeL": 0.22950819672131148
+    },
+    {
+      "id": "faq:nhs-register:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.22313016014842982,
+      "rouge1": 0.5714285714285715,
+      "rouge2": 0.5588235294117647,
+      "rougeL": 0.5714285714285715
+    },
+    {
+      "id": "faq:nhs-register:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 0.16767724875179713,
+      "rouge1": 0.5283018867924528,
+      "rouge2": 0.5098039215686275,
+      "rougeL": 0.5283018867924528
+    },
+    {
+      "id": "faq:using-language:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 1,
+      "rouge1": 1,
+      "rouge2": 1,
+      "rougeL": 1
+    },
+    {
+      "id": "faq:using-language:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 1,
+      "rouge1": 1,
+      "rouge2": 1,
+      "rougeL": 1
+    },
+    {
+      "id": "faq:using-offline:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 1,
+      "bleu": 1,
+      "rouge1": 1,
+      "rouge2": 1,
+      "rougeL": 1
+    },
+    {
+      "id": "faq:using-offline:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 1,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "para:nhs-register:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": true,
+      "coverage": 0.943666321542762,
+      "bleu": 0.09824841775916368,
+      "rouge1": 0.4316546762589928,
+      "rouge2": 0.1897810218978102,
+      "rougeL": 0.2446043165467626
+    },
+    {
+      "id": "para:nhs-register:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 0.3623818911122413,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "para:nino-what:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 0.7573356345382238,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "para:nino-what:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 0.5955879173206861,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "para:bank-proof:en",
+      "lang": "en",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 1,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "para:bank-proof:pl",
+      "lang": "pl",
+      "expectOffCorpus": false,
+      "answered": false,
+      "coverage": 0.479136871832048,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "off:en:0",
+      "lang": "en",
+      "expectOffCorpus": true,
+      "answered": false,
+      "coverage": 0.18449137188208256,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "off:en:1",
+      "lang": "en",
+      "expectOffCorpus": true,
+      "answered": false,
+      "coverage": 0.12089634878138147,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "off:en:2",
+      "lang": "en",
+      "expectOffCorpus": true,
+      "answered": false,
+      "coverage": 0.359424386253528,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "off:pl:3",
+      "lang": "pl",
+      "expectOffCorpus": true,
+      "answered": false,
+      "coverage": 0.061254430893497774,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    },
+    {
+      "id": "off:pl:4",
+      "lang": "pl",
+      "expectOffCorpus": true,
+      "answered": false,
+      "coverage": 0.1708609027823732,
+      "bleu": null,
+      "rouge1": null,
+      "rouge2": null,
+      "rougeL": null
+    }
+  ]
+}

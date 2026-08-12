@@ -168,8 +168,8 @@ export const drivingTests = [
         ],
         correct: 1,
         explanation: {
-          en: "Highway Code Rules 110 and 111 state you should only flash your headlights to let other road users know you are there—never to signal instructions, invite them to proceed, or show aggression.",
-          pl: "Zgodnie z regulaminem Kodeksu Drogowego, powinieneś migać światłami drogowymi tylko wtedy, gdy chcesz poinformować innych użytkowników drogi, że jesteś tam—nigdy nie do sygnalizowania instrukcji, zachęcania ich do kontynuowania jazdy lub pokazywania agresji."
+          en: "Highway Code Rules 110 and 111 state you should only flash your headlights to let other road users know you are there, never to signal instructions, invite them to proceed, or show aggression.",
+          pl: "Zgodnie z regulaminem Kodeksu Drogowego, powinieneś migać światłami drogowymi tylko wtedy, gdy chcesz poinformować innych użytkowników drogi, że jesteś tam, nigdy nie do sygnalizowania instrukcji, zachęcania ich do kontynuowania jazdy lub pokazywania agresji."
         }
       },
       {
@@ -307,8 +307,8 @@ export const drivingTests = [
         ],
         correct: 1,
         explanation: {
-          en: "Never attempt to overtake if your view ahead is blocked—such as by a dip, a sharp bend, or the crest of a hill.",
-          pl: "Nigdy nie próbuj przekraczać, jeśli widok naprzeciwko jest zablokowany—np. przez wypukłość, ostry zakręt lub wierzchołek wzgórza."
+          en: "Never attempt to overtake if your view ahead is blocked, such as by a dip, a sharp bend, or the crest of a hill.",
+          pl: "Nigdy nie próbuj przekraczać, jeśli widok naprzeciwko jest zablokowany, np. przez wypukłość, ostry zakręt lub wierzchołek wzgórza."
         }
       },
       {
@@ -446,8 +446,8 @@ export const drivingTests = [
         ],
         correct: 1,
         explanation: {
-          en: "Rear fog lights should only be used when visibility is seriously reduced—defined as less than 100 metres (328 feet). Switch them off when visibility improves.",
-          pl: "Tylnie światła mgły powinny być używane tylko wtedy, gdy widoczność jest poważnie ograniczona—zdefiniowane jako mniej niż 100 metrów (1097 stóp). Wyłącz je, gdy widoczność się poprawi."
+          en: "Rear fog lights should only be used when visibility is seriously reduced, defined as less than 100 metres (328 feet). Switch them off when visibility improves.",
+          pl: "Tylnie światła mgły powinny być używane tylko wtedy, gdy widoczność jest poważnie ograniczona, zdefiniowane jako mniej niż 100 metrów (1097 stóp). Wyłącz je, gdy widoczność się poprawi."
         }
       },
       {
@@ -518,8 +518,8 @@ export const drivingTests = [
         ],
         correct: 2,
         explanation: {
-          en: "Amber flashing beacons warn you of a slow-moving, wide, or stationary vehicle—such as a recovery truck, tractor, or road maintenance crew.",
-          pl: "Pomarańczowe migające sygnały ostrzegają o wolno poruszającym się, szerokim lub nieruchomym pojeździe—takim jak ciężarówka ratunkowa, combine lub ekipa serwisowa drogowa."
+          en: "Amber flashing beacons warn you of a slow-moving, wide, or stationary vehicle, such as a recovery truck, tractor, or road maintenance crew.",
+          pl: "Pomarańczowe migające sygnały ostrzegają o wolno poruszającym się, szerokim lub nieruchomym pojeździe, takim jak ciężarówka ratunkowa, combine lub ekipa serwisowa drogowa."
         }
       },
       {

@@ -36,7 +36,7 @@ export const faqs = [
       pl: "W czym może mi pomóc ta aplikacja?",
     },
     answer: {
-      en: "This app guides you through the essential first steps of settling in the UK in a logical, sensible order. It helps you manage tasks like finding accommodation, opening a bank account, applying for a National Insurance number, and registering with a GP—all available in both English and Polish.",
+      en: "This app guides you through the essential first steps of settling in the UK in a logical, sensible order. It helps you manage tasks like finding accommodation, opening a bank account, applying for a National Insurance number, and registering with a GP, all available in both English and Polish.",
       pl: "Aplikacja prowadzi Cię przez najważniejsze pierwsze kroki związane z osiedleniem się w Wielkiej Brytanii w logicznej, rozsądnej kolejności. Pomaga w załatwieniu takich spraw jak zakwaterowanie, założenie konta bankowego, wniosek o numer National Insurance czy rejestracja u lekarza rodzinnego (GP) – a wszystko to w języku angielskim i polskim.",
     },
     guide: null,
