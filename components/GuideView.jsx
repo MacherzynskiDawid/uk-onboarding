@@ -30,7 +30,7 @@ function PathIcon({ index }) {
   );
 }
 
-function StepList({ steps, slug, lang, isStepDone, toggleStep }) {
+function StepList({ steps, slug, lang, isStepDone, toggleStep, markPriorDone }) {
   let seqDone = 0;
   while (seqDone < steps.length && isStepDone(slug, seqDone)) seqDone++;
   return (
@@ -50,6 +50,15 @@ function StepList({ steps, slug, lang, isStepDone, toggleStep }) {
                 {locked && <span className="lock-hint">{ui.completePrevious[lang]}</span>}
               </span>
             </label>
+            {locked && (
+              <button
+                type="button"
+                className="link-btn"
+                onClick={() => markPriorDone(slug, i)}
+              >
+                {ui.markPriorDone[lang]}
+              </button>
+            )}
           </li>
         );
       })}
@@ -70,7 +79,7 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
 
   const { lang } = useLanguage();
   const { user, loading } = useAuth();
-  const { progress, isStepDone, toggleStep } = useProgress();
+  const { progress, isStepDone, toggleStep, markPriorDone } = useProgress();
 
   const sections = guide.sections || [{ title: null, steps: guide.steps || [] }];
   const isPathChoice = !!guide.pathChoice && sections.length > 1;
@@ -176,7 +185,14 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
         <button type="button" className="path-back" onClick={() => setChosen(null)}>&larr; {ui.choosePathBack[lang]}</button>
         <h2 className="section-head">{sec.title[lang]}</h2>
         
-        <StepList steps={sec.steps} slug={pkey} lang={lang} isStepDone={isStepDone} toggleStep={toggleStep} />
+        <StepList 
+          steps={sec.steps} 
+          slug={pkey} 
+          lang={lang} 
+          isStepDone={isStepDone} 
+          toggleStep={toggleStep} 
+          markPriorDone={markPriorDone} 
+        />
         
         {allDone && <Trophy label={ui.guideComplete[lang]} sub={sec.title[lang]} />}
 
@@ -198,7 +214,14 @@ export default function GuideView({ guide: initialGuide, prereqGuides }) {
     <main lang={lang}>
       {header}
       <p className="disclaimer">{guide.disclaimer[lang]}</p>
-      <StepList steps={allSteps} slug={guide.slug} lang={lang} isStepDone={isStepDone} toggleStep={toggleStep} />
+      <StepList 
+        steps={allSteps} 
+        slug={guide.slug} 
+        lang={lang} 
+        isStepDone={isStepDone} 
+        toggleStep={toggleStep} 
+        markPriorDone={markPriorDone} 
+      />
       {allDone && <Trophy label={ui.guideComplete[lang]} sub={guide.title[lang]} />}
       
       {/* --- DYNAMIC DRIVING TEST MOCK CTA (Sequential Fallback rendering) --- */}
