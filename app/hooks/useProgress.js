@@ -59,10 +59,22 @@ export function useProgress() {
     });
   }, [persist]);
 
+  const markPriorDone = useCallback((slug, targetIndex) => {
+    setProgress((prev) => {
+      const done = new Set(prev[slug] || []);
+      for (let i = 0; i < targetIndex; i++) {
+        done.add(i);
+      }
+      const next = { ...prev, [slug]: [...done].sort((a, b) => a - b) };
+      persist(next);
+      return next;
+    });
+  }, [persist]);
+
   const isStepDone = useCallback(
     (slug, index) => (progress[slug] || []).includes(index),
     [progress]
   );
 
-  return { progress, ready, toggleStep, isStepDone };
+  return { progress, ready, toggleStep, markPriorDone, isStepDone };
 }
