@@ -1,11 +1,12 @@
 import "./globals.css";
+import Script from "next/script";
 import { AuthProvider } from "@/components/AuthProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ServiceWorkerRegister from "./sw-register";
 import { isFirebaseConfigured } from "@/app/firebase/setup";
-import AssistantWidget from "@/components/AssistantWidget"; // 👈 Added import
+import AssistantWidget from "@/components/AssistantWidget";
 
 export const metadata = {
   title: "UK Newcomer Guides",
@@ -16,6 +17,8 @@ export const metadata = {
 export const viewport = { themeColor: "#4338ca" };
 
 export default function RootLayout({ children }) {
+  const mazeId = process.env.NEXT_PUBLIC_MAZE_ID;
+
   return (
     <html lang="en">
       <head>
@@ -27,6 +30,38 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {mazeId && (
+          <Script id="maze-snippet" strategy="afterInteractive">
+            {`
+              (function (m, a, z, e) {
+                var s, t, u, v;
+                try {
+                  t = m.sessionStorage.getItem('maze-us');
+                } catch (err) {}
+
+                if (!t) {
+                  t = new Date().getTime();
+                  try {
+                    m.sessionStorage.setItem('maze-us', t);
+                  } catch (err) {}
+                }
+
+                u = document.currentScript || (function () {
+                  var w = document.getElementsByTagName('script');
+                  return w[w.length - 1];
+                })();
+                v = u && u.nonce;
+
+                s = a.createElement('script');
+                s.src = z + '?apiKey=' + e;
+                s.async = true;
+                if (v) s.setAttribute('nonce', v);
+                a.getElementsByTagName('head')[0].appendChild(s);
+                m.mazeUniversalSnippetApiKey = e;
+              })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', '${mazeId}');
+            `}
+          </Script>
+        )}
         <AuthProvider>
           <LanguageProvider>
             {!isFirebaseConfigured && (
@@ -38,7 +73,7 @@ export default function RootLayout({ children }) {
             <div className="container">{children}</div>
             <Footer />
             <ServiceWorkerRegister />
-            <AssistantWidget /> {/* 👈 Added component */}
+            <AssistantWidget />
           </LanguageProvider>
         </AuthProvider>
       </body>
