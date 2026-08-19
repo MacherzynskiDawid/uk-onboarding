@@ -17,7 +17,7 @@ export const metadata = {
 export const viewport = { themeColor: "#4338ca" };
 
 export default function RootLayout({ children }) {
-  const mazeId = process.env.NEXT_PUBLIC_MAZE_ID;
+  const mazeId = "053753c1-c4db-4c5f-ba2f-657fbd1e8380";
 
   return (
     <html lang="en">
