@@ -7,6 +7,22 @@ import { auth, db, isFirebaseConfigured } from "@/app/firebase/setup";
 import { useLanguage } from "./LanguageProvider";
 import { ui } from "@/lib/ui-strings";
 
+// Maps Firebase Auth error codes to specific, user-facing strings. Any code not
+// listed here falls back to the existing generic message.
+function authMessage(code, lang) {
+  switch (code) {
+    case "auth/email-already-in-use":  return ui.emailInUse[lang];
+    case "auth/invalid-email":         return ui.invalidEmail[lang];
+    case "auth/weak-password":         return ui.weakPassword[lang];
+    case "auth/invalid-credential":
+    case "auth/wrong-password":
+    case "auth/user-not-found":        return ui.invalidCredentials[lang];
+    case "auth/too-many-requests":     return ui.tooManyRequests[lang];
+    case "auth/network-request-failed":return ui.networkError[lang];
+    default:                           return ui.authError[lang];
+  }
+}
+
 export default function AuthForm({ initialMode = "signin" }) {
   const router = useRouter();
   const { lang } = useLanguage();
@@ -14,6 +30,7 @@ export default function AuthForm({ initialMode = "signin" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -30,10 +47,29 @@ export default function AuthForm({ initialMode = "signin" }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setBusy(true); setError("");
+    setBusy(true); setError(""); setNotice("");
+
+    // Stage 1: authentication. A failure here means no account exists, so the
+    // form reports the specific cause and stops.
+    let cred;
     try {
       if (isRegister) {
-        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        cred = await createUserWithEmailAndPassword(auth, email, password);
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+    } catch (err) {
+      setError(authMessage(err?.code, lang));
+      setBusy(false);
+      return;
+    }
+
+    // Stage 2: profile provisioning. The account already exists at this point,
+    // so a Firestore failure is reported as a partial success rather than as an
+    // authentication error.
+    let profileComplete = true;
+    if (isRegister) {
+      try {
         await setDoc(
           doc(db, "users", cred.user.uid),
           { email: cred.user.email, role: "user", active: true, createdAt: serverTimestamp() },
@@ -45,15 +81,22 @@ export default function AuthForm({ initialMode = "signin" }) {
           from: "system",
           createdAt: serverTimestamp(),
         });
-      } else {
-        await signInWithEmailAndPassword(auth, email, password);
+      } catch (err) {
+        profileComplete = false;
+        console.error("Profile provisioning failed after account creation:", err?.code, err);
       }
-      router.push("/profile");
-    } catch {
-      setError(ui.authError[lang]);
-    } finally {
-      setBusy(false);
     }
+
+    // Stage 3: confirm, then redirect. Registration shows a confirmation before
+    // navigating; sign-in navigates immediately.
+    if (isRegister) {
+      setNotice(profileComplete ? ui.accountCreated[lang] : ui.accountCreatedPartial[lang]);
+      setTimeout(() => router.push("/profile"), 1500);
+      return;
+    }
+
+    setBusy(false);
+    router.push("/profile");
   }
 
   return (
@@ -92,12 +135,13 @@ export default function AuthForm({ initialMode = "signin" }) {
             {showPassword ? ui.hideWord[lang] : ui.showWord[lang]}
           </button>
         </div>
-        {error && <p className="error">{error}</p>}
+        {error && <p className="error" role="alert">{error}</p>}
+        {notice && <p className="notice" role="status">{notice}</p>}
         <button type="submit" disabled={busy}>{isRegister ? ui.signUp[lang] : ui.signIn[lang]}</button>
       </form>
       <p className="muted auth-alt">
         {isRegister ? ui.haveAccount[lang] : ui.needAccount[lang]}{" "}
-        <button type="button" className="link-button" onClick={() => { setMode(isRegister ? "signin" : "register"); setError(""); }}>
+        <button type="button" className="link-button" onClick={() => { setMode(isRegister ? "signin" : "register"); setError(""); setNotice(""); }}>
           {isRegister ? ui.signIn[lang] : ui.createAccount[lang]}
         </button>
       </p>
